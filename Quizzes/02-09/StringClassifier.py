@@ -1,6 +1,6 @@
 
-evaluationString = "940 This are letters 123 460 String ###!!!***"
-specialCharacters = "!#$%&/()='¡_:[]¨*"
+evaluationString = "940 These are letters 123 460 String ###!!!***"
+specialCharacters = "!#$%&/()='¡_:[]¨*?{@}¿"
 digits = 0
 chars = 0
 spaces = 0
