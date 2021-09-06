@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Example</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-red-300">
+    <!--Container-->
+    <div
+      class="
+        container
+        min-h-screen
+        bg-gradient-to-b
+        from-gray-100
+        to-gray-400
+        mx-auto
+      "
+    >
+      <section class="mx-auto p-10" id="form">
+        <form class="mx-auto">
+          <!--Title-->
+          <div
+            class="text-center bg-red-100 w-max mx-auto p-3 rounded-lg"
+            id="header"
+          >
+            <h1 class="text-2xl underline">HTML Elements</h1>
+          </div>
+
+          <!--Text Input-->
+          <div
+            class="grid grid-cols-2 items-center justify-items-center gap-4"
+            id="text-input"
+          >
+            <div class="p-5 bg-red-100 rounded-lg">
+              <h1 class="text-xl">This is a text input</h1>
+              <label class="mx-2" for="input-example">Input:</label>
+              <input
+                id="input-example"
+                class="p-1 my-2 rounded-lg"
+                type="text"
+              />
+            </div>
+
+            <!--Radio Input-->
+            <div class="mx-5 p-5 bg-red-100 rounded-lg" id="radio-input">
+              <h1 class="text-xl my-2">These are radio inputs</h1>
+              <input type="radio" id="ex-a" name="radio_input" value="ex-a" />
+              <label for="this">Example</label><br />
+              <input type="radio" id="ex-b" name="radio_input" value="ex-b" />
+              <label for="is">Example</label><br />
+              <input type="radio" id="ex-c" name="radio_input" value="ex-c" />
+              <label for="an">Example</label>
+            </div>
+
+            <!--Checkbox-->
+
+            <div class="p-5 bg-red-100 rounded-lg" id="checkbox-input">
+              <h1 class="text-xl my-2">Checkbox example</h1>
+              <input
+                type="checkbox"
+                id="checkbox-example"
+                name="CheckBox"
+                value="Example"
+              />
+              <label for="checkbox-example">Example</label><br />
+            </div>
+
+            <!--Date Picker-->
+            <div class="p-5 bg-red-100 rounded-lg" id="date-input">
+              <h1 class="text-xl my-2">Date picker example</h1>
+              <label for="date-picker">Date:</label>
+              <input type="date" id="date-picker" name="date" />
+            </div>
+
+            <!--List-->
+            <div class="p-5 m-5 bg-red-100 rounded-lg" id="list-ex">
+              <h1 class="text-xl my-2">List example</h1>
+              <ul class="list-disc pl-4">
+                <li>Example</li>
+                <li>Example</li>
+                <li>Example</li>
+                <li>Example</li>
+              </ul>
+            </div>
+
+            <!--Button-->
+            <div
+              class="grid grid-row-2 w-max m-5 p-5 bg-red-100 rounded-lg"
+              id="button-ex"
+            >
+              <h1 class="text-xl my-2">Button example</h1>
+              <input
+                class="
+                  bg-gray-600
+                  text-white
+                  p-4
+                  rounded-lg
+                  hover:shadow-xl hover:bg-black
+                "
+                type="button"
+                value="Click here!"
+              />
+            </div>
+
+            <!--Table-->
+            <div class="p-5 bg-red-100 rounded-lg" id="table-ex">
+              <h1 class="text-xl my-2">Table example</h1>
+              <table
+                class="my-2 border-separate border-black border table-fixed"
+              >
+                <thead>
+                  <tr>
+                    <th class="w-1/2">Column A</th>
+                    <th class="w-1/4">Column B</th>
+                    <th class="w-1/4">Column C</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Officia, dolorum!
+                    </td>
+                    <td>Ex B</td>
+                    <td>Ex C</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Atque, deleniti.
+                    </td>
+                    <td>Ex B</td>
+                    <td>Ex C</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Ad, neque.
+                    </td>
+                    <td>Ex B</td>
+                    <td>Ex C</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!--Select-->
+            <div class="p-5 bg-red-100 rounded-lg" id="select-input">
+              <h1 class="text-xl my-2">Select example</h1>
+              <label for="select">Select an option:</label>
+              <select id="select" name="dropdown">
+                <option value="opt-1">A</option>
+                <option value="opt-2">B</option>
+                <option value="opt-3">C</option>
+                <option value="opt-4">D</option>
+              </select>
+            </div>
+
+            <!--Anchor tag example-->
+            <div class="p-5 bg-red-100 rounded-lg" id="link-ex">
+              <h1 class="text-xl my-2">Link example</h1>
+              <a class="text-blue-700 underline" href="#">This is a Link</a>
+            </div>
+
+            <div class="w-4/12 p-5 bg-red-100 rounded-lg">
+              <h1 class="text-xl my-2 text-center">Image example</h1>
+              <img src="mail.png" alt="" />
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
