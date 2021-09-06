@@ -11,7 +11,7 @@
     />
   </head>
   <body class="bg-red-300">
-    <!- Container ->
+    <!--Container-->
     <div
       class="
         container
@@ -22,13 +22,21 @@
         mx-auto
       "
     >
-      <section class="mx-auto p-10">
+      <section class="mx-auto p-10" id="form">
         <form class="mx-auto">
-          <div class="text-center bg-red-100 w-max mx-auto p-3 rounded-lg">
+          <!--Title-->
+          <div
+            class="text-center bg-red-100 w-max mx-auto p-3 rounded-lg"
+            id="header"
+          >
             <h1 class="text-2xl underline">HTML Elements</h1>
           </div>
 
-          <div class="grid grid-cols-2 items-center justify-items-center gap-4">
+          <!--Text Input-->
+          <div
+            class="grid grid-cols-2 items-center justify-items-center gap-4"
+            id="text-input"
+          >
             <div class="p-5 bg-red-100 rounded-lg">
               <h1 class="text-xl">This is a text input</h1>
               <label class="mx-2" for="input-example">Input:</label>
@@ -39,7 +47,8 @@
               />
             </div>
 
-            <div class="mx-5 p-5 bg-red-100 rounded-lg">
+            <!--Radio Input-->
+            <div class="mx-5 p-5 bg-red-100 rounded-lg" id="radio-input">
               <h1 class="text-xl my-2">These are radio inputs</h1>
               <input type="radio" id="ex-a" name="radio_input" value="ex-a" />
               <label for="this">Example</label><br />
@@ -49,7 +58,9 @@
               <label for="an">Example</label>
             </div>
 
-            <div class="p-5 bg-red-100 rounded-lg">
+            <!--Checkbox-->
+
+            <div class="p-5 bg-red-100 rounded-lg" id="checkbox-input">
               <h1 class="text-xl my-2">Checkbox example</h1>
               <input
                 type="checkbox"
@@ -60,13 +71,15 @@
               <label for="checkbox-example">Example</label><br />
             </div>
 
-            <div class="p-5 bg-red-100 rounded-lg">
+            <!--Date Picker-->
+            <div class="p-5 bg-red-100 rounded-lg" id="date-input">
               <h1 class="text-xl my-2">Date picker example</h1>
               <label for="date-picker">Date:</label>
               <input type="date" id="date-picker" name="date" />
             </div>
 
-            <div class="p-5 m-5 bg-red-100 rounded-lg">
+            <!--List-->
+            <div class="p-5 m-5 bg-red-100 rounded-lg" id="list-ex">
               <h1 class="text-xl my-2">List example</h1>
               <ul class="list-disc pl-4">
                 <li>Example</li>
@@ -76,7 +89,11 @@
               </ul>
             </div>
 
-            <div class="grid grid-row-2 w-max m-5 p-5 bg-red-100 rounded-lg">
+            <!--Button-->
+            <div
+              class="grid grid-row-2 w-max m-5 p-5 bg-red-100 rounded-lg"
+              id="button-ex"
+            >
               <h1 class="text-xl my-2">Button example</h1>
               <input
                 class="
@@ -91,7 +108,8 @@
               />
             </div>
 
-            <div class="p-5 bg-red-100 rounded-lg">
+            <!--Table-->
+            <div class="p-5 bg-red-100 rounded-lg" id="table-ex">
               <h1 class="text-xl my-2">Table example</h1>
               <table
                 class="my-2 border-separate border-black border table-fixed"
@@ -132,7 +150,8 @@
               </table>
             </div>
 
-            <div class="p-5 bg-red-100 rounded-lg">
+            <!--Select-->
+            <div class="p-5 bg-red-100 rounded-lg" id="select-input">
               <h1 class="text-xl my-2">Select example</h1>
               <label for="select">Select an option:</label>
               <select id="select" name="dropdown">
@@ -143,16 +162,16 @@
               </select>
             </div>
 
-            <div class="p-5 bg-red-100 rounded-lg">
+            <!--Anchor tag example-->
+            <div class="p-5 bg-red-100 rounded-lg" id="link-ex">
               <h1 class="text-xl my-2">Link example</h1>
               <a class="text-blue-700 underline" href="#">This is a Link</a>
             </div>
 
-            <div class="w-4/12 p-5 bg-red-100 rounded-lg ">
-                <h1 class="text-xl my-2 text-center">Image example</h1>
-                <img src="mail.png" alt="">
+            <div class="w-4/12 p-5 bg-red-100 rounded-lg">
+              <h1 class="text-xl my-2 text-center">Image example</h1>
+              <img src="mail.png" alt="" />
             </div>
-
           </div>
         </form>
       </section>
