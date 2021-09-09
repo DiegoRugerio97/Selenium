@@ -1,0 +1,19 @@
+2021-09-09 15:45:14,570 : INFO : LogClass : Printing data information: ['First name', 'Last name', 'email@email.com']
+2021-09-09 15:45:14,583 : INFO : LogClass : Performing test with: Chrome
+2021-09-09 15:45:14,583 : INFO : LogClass : Performing test with: Chrome
+2021-09-09 15:45:14,583 : INFO : LogClass : With Data: Data A
+2021-09-09 15:45:14,583 : INFO : LogClass : With Data: Data A
+2021-09-09 15:45:14,593 : INFO : LogClass : Performing test with: Firefox
+2021-09-09 15:45:14,593 : INFO : LogClass : Performing test with: Firefox
+2021-09-09 15:45:14,593 : INFO : LogClass : Performing test with: Firefox
+2021-09-09 15:45:14,593 : INFO : LogClass : With Data: Data B
+2021-09-09 15:45:14,593 : INFO : LogClass : With Data: Data B
+2021-09-09 15:45:14,593 : INFO : LogClass : With Data: Data B
+2021-09-09 15:45:14,603 : INFO : LogClass : Performing test with: IE
+2021-09-09 15:45:14,603 : INFO : LogClass : Performing test with: IE
+2021-09-09 15:45:14,603 : INFO : LogClass : Performing test with: IE
+2021-09-09 15:45:14,603 : INFO : LogClass : Performing test with: IE
+2021-09-09 15:45:14,603 : INFO : LogClass : With Data: Data C
+2021-09-09 15:45:14,603 : INFO : LogClass : With Data: Data C
+2021-09-09 15:45:14,603 : INFO : LogClass : With Data: Data C
+2021-09-09 15:45:14,603 : INFO : LogClass : With Data: Data C
