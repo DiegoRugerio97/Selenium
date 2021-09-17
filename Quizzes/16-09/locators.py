@@ -5,6 +5,7 @@ import time
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--start-maximized")
 chrome_options.add_argument("--ignore-certificate-errors")
+chrome_options.add_argument("--disable-gpu")
 
 driver = webdriver.Chrome(executable_path='C:\\Users\\Diego\\Downloads\\Programas a Instalar\\2021\\Drivers\\chromedriver_win32\\chromedriver.exe', options=chrome_options)
 driver.get("https://rahulshettyacademy.com/AutomationPractice/")
