@@ -11,3 +11,11 @@ Success! Thank you! Your order will be delivered in next few weeks :-).
 2021-09-10 16:30:58,355 : INFO : test_e2e : Link is present, clicking it.
 2021-09-10 16:30:58,481 : INFO : test_e2e : Text received from page: ×
 Success! Thank you! Your order will be delivered in next few weeks :-).
+2021-09-10 18:27:56,900 : INFO : test_e2e : Moving to Checkout Page
+2021-09-10 18:27:56,901 : INFO : test_e2e : Getting all cards
+2021-09-10 18:27:56,964 : INFO : test_e2e : iphone X card found, adding to cart.
+2021-09-10 18:27:57,291 : INFO : test_e2e : Blackberry card found, adding to cart.
+2021-09-10 18:27:57,687 : INFO : test_e2e : Moving to Confirm Page
+2021-09-10 18:28:03,122 : INFO : test_e2e : Link is present, clicking it.
+2021-09-10 18:28:03,233 : INFO : test_e2e : Text received from page: ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
