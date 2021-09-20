@@ -1,3 +1,4 @@
+from PageObjects.AuthenticationPage import AuthenticationPage
 from PageObjects.SearchResults import SearchResults
 from PageObjects.BasePage import BasePage
 from PageObjects.ProductPage import ProductPage
@@ -12,6 +13,7 @@ class HomePage(BasePage):
     searchField = (By.ID, "search_query_top")
     autoComplete = (By.CLASS_NAME, "ac_even")
     searchButton = (By.NAME, "submit_search")
+    signInButton = (By.LINK_TEXT, "Sign in")
 
     #Methods
     def getSearchField(self): 
@@ -24,6 +26,10 @@ class HomePage(BasePage):
     def goToSearchResults(self):
         self.driver.find_element(*HomePage.searchButton).click()
         return SearchResults(self.driver)
+
+    def goToAuthenticationPage(self):
+        self.driver.find_element(*HomePage.signInButton).click()
+        return AuthenticationPage(self.driver)
 
 
     

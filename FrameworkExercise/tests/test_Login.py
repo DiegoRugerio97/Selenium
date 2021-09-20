@@ -1,14 +1,16 @@
-from Utilities.BaseClass import BaseClass
+from PageObjects.HomePage import HomePage
 from PageObjects.AuthenticationPage import AuthenticationPage
+from Utilities.BaseClass import BaseClass
+
 
 
 class TestLogin(BaseClass):
 
     def test_invalidLoginMail(self):
 
-        authenticationPage = AuthenticationPage(self.driver)
+        homePage = HomePage(self.driver)
 
-        authenticationPage.getSignInButton().click()
+        authenticationPage = homePage.goToAuthenticationPage()
 
         authenticationPage.getMailField().send_keys("diego.rugeriomail.com")
 
@@ -20,13 +22,13 @@ class TestLogin(BaseClass):
         
         assert "Invalid email" in alertMessage
         
-        authenticationPage.refreshPage()
+        homePage.goToHomePage()
 
     def test_invalidLoginPasswd(self):
 
-        authenticationPage = AuthenticationPage(self.driver)
+        homePage = HomePage(self.driver)
 
-        authenticationPage.getSignInButton().click()
+        authenticationPage = homePage.goToAuthenticationPage()
 
         authenticationPage.getMailField().send_keys("diego.rugerio@mail.com")
 
@@ -38,24 +40,23 @@ class TestLogin(BaseClass):
         
         assert "Authentication failed" in alertMessage
 
-        authenticationPage.refreshPage()
+        homePage.goToHomePage()
 
 
     def test_validLogin(self):
 
-        authenticationPage = AuthenticationPage(self.driver)
-        
-        authenticationPage.getSignInButton().click()
+        homePage = HomePage(self.driver)
+
+        authenticationPage = homePage.goToAuthenticationPage()
 
         authenticationPage.getMailField().send_keys("diego.rugerio@mail.com")
 
         authenticationPage.getPassWordField().send_keys("XXXX#")
 
-        authenticationPage.getSubmitButton().click()
+        accountPage = authenticationPage.goToAccountPage()
 
-        accountName = authenticationPage.getAccountButton().text
+        accountName = accountPage.getAccountLabel()
         assert accountName == "Diego Rugerio"
 
-        authenticationPage.getSignOutButton().click()
 
 
