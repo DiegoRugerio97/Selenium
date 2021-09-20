@@ -20,7 +20,7 @@ class BaseClass():
         wait.until(EC.presence_of_element_located((By.LINK_TEXT, linkText)))
 
     def verifyElementPresenceByClass(self,className):
-        wait = WebDriverWait(self.driver,6)
+        wait = WebDriverWait(self.driver,10)
         wait.until(EC.presence_of_element_located((By.CLASS_NAME,className)))
 
     def selectFromDropDown(self,webElement,text):

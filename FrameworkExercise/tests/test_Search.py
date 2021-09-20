@@ -1,38 +1,68 @@
+from PageObjects.HomePage import HomePage
 from Utilities.BaseClass import BaseClass
 
 class TestSearch(BaseClass):
 
     def test_searchShirt(self):
+        
+        homePage = HomePage(self.driver)
 
-        searchField = self.driver.find_element_by_id("search_query_top")
-        searchField.send_keys("shirt")
+        homePage.getSearchField().send_keys("shirt")
 
         self.verifyElementPresenceByClass("ac_even")
 
-        autoCompletion = self.driver.find_element_by_class_name("ac_even")
-        autoCompletion.click()
+        productPage = homePage.goToProductPage()
 
-        productText = self.driver.find_element_by_tag_name("h1").text
+        productText = productPage.getProductName()
         
         assert "shirt" in productText
 
-        homePage = self.driver.find_element_by_xpath("//img[@alt='My Store']")
-        homePage.click()
+        homePage.goToHomePage()
 
     def test_invalidSearch(self):
 
-        searchField = self.driver.find_element_by_id("search_query_top")
-        searchField.send_keys("XXXX")
+        homePage = HomePage(self.driver)
 
-        searchButton = self.driver.find_element_by_name("submit_search")
-        searchButton.click()
+        homePage.getSearchField().send_keys("XXXX")
 
-        alertMessage = self.driver.find_element_by_xpath("//p[@class='alert alert-warning']").text
+        searchResults = homePage.goToSearchResults()
+
+        alertMessage = searchResults.getAlertText()
 
         assert "No results" in alertMessage
 
-        homePage = self.driver.find_element_by_xpath("//img[@alt='My Store']")
-        homePage.click()
+        homePage.goToHomePage()
+
+    def test_sortedSearch(self):
+
+        homePage = HomePage(self.driver)
+
+        homePage.getSearchField().send_keys("dress")
+
+        searchResults = homePage.goToSearchResults()
+
+        sortDropDown = searchResults.getSortDropDown()
+
+        productNames = searchResults.getProductNames()
+        namesUnSortedList = []
+
+        for name in productNames:
+            namesUnSortedList.append(name.text)
+
+        self.selectFromDropDown(sortDropDown,"Product Name: A to Z")
+
+        productNames = searchResults.getProductNames()
+        namesSortedList = []
+
+        for name in productNames:
+            namesSortedList.append(name.text)
+
+        assert sorted(namesSortedList) == namesSortedList
+
+
+
+
+
 
     
 
