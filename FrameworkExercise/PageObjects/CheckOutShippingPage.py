@@ -17,6 +17,6 @@ class CheckOutShippingPage():
 
     def goToPaymentPage(self):
         self.driver.find_element(*CheckOutShippingPage.checkOutButton).click()
-        return CheckOutPaymentPage(self)
+        return CheckOutPaymentPage(self.driver)
 
 

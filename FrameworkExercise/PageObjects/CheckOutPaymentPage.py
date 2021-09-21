@@ -1,4 +1,4 @@
-from OrderConfirmationPage import OrderConfirmationPage
+from PageObjects.OrderConfirmationPage import OrderConfirmationPage
 from selenium.webdriver.common.by import By
 
 class CheckOutPaymentPage:

@@ -1,4 +1,3 @@
-from PageObjects.CheckOutAddressPage import CheckOutAddressPage
 from Utilities.BaseClass import BaseClass
 from PageObjects.HomePage import HomePage
 

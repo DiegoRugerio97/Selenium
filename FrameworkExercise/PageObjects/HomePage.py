@@ -1,3 +1,4 @@
+from PageObjects.ContactPage import ContactPage
 from PageObjects.AuthenticationPage import AuthenticationPage
 from PageObjects.SearchResults import SearchResults
 from PageObjects.BasePage import BasePage
@@ -15,6 +16,7 @@ class HomePage(BasePage):
     searchButton = (By.NAME, "submit_search")
     signInButton = (By.LINK_TEXT, "Sign in")
     signOutButton = (By.LINK_TEXT, "Sign out")
+    contactButton = (By.LINK_TEXT, "Contact us")
 
     #Methods
     def getSearchField(self): 
@@ -34,6 +36,10 @@ class HomePage(BasePage):
 
     def signOut(self):
         self.driver.find_element(*HomePage.signOutButton).click()
+
+    def goToContactPage(self):
+        self.driver.find_element(*HomePage.contactButton).click()
+        return ContactPage(self.driver)
     
 
         
