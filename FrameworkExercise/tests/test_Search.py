@@ -19,13 +19,13 @@ class TestSearch(BaseClass):
 
     def test_searchItem(self, getData_test_A):
 
-        logger = self.get_logger()
+        logger = self.getLogger()
         
         homePage = HomePage(self.driver)
 
-        homePage.getSearchField().send_keys(getData_test_A['item'])
+        homePage.searchItem(getData_test_A['item'])
 
-        self.verifyElementPresenceByClass("ac_even")
+        self.verifyElementPresence(homePage.autoComplete)
 
         productPage = homePage.goToProductPage()
 
@@ -39,11 +39,11 @@ class TestSearch(BaseClass):
 
     def test_invalidSearch(self, getData_test_B):
 
-        logger = self.get_logger()
+        logger = self.getLogger()
 
         homePage = HomePage(self.driver)
 
-        homePage.getSearchField().send_keys( getData_test_B['item'])
+        homePage.searchItem(getData_test_B['item'])
 
         searchResults = homePage.goToSearchResults()
 
@@ -57,11 +57,11 @@ class TestSearch(BaseClass):
 
     def test_sortedSearch(self, getData_test_C):
 
-        logger = self.get_logger()
+        logger = self.getLogger()
 
         homePage = HomePage(self.driver)
 
-        homePage.getSearchField().send_keys( getData_test_C['item'])
+        homePage.searchItem(getData_test_C['item'])
 
         searchResults = homePage.goToSearchResults()
 
