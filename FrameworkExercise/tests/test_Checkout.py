@@ -40,5 +40,42 @@ class TestCheckOut(BaseClass):
         homePage.signOut()
 
         homePage.goToHomePage()
+    
+    def test_EndToEnd(self):
+
+        homePage = HomePage(self.driver)
+
+        homePage.getSearchField().send_keys("blouse")
+
+        self.verifyElementPresenceByClass("ac_even")
+
+        productPage = homePage.goToProductPage()
+
+        productPage.getAddToCartButton().click()
+
+        self.verifyElementClickableByXPATH("//a[@title='Proceed to checkout']")
+
+        summaryPage = productPage.goToCheckOut()
+        
+        authenticationPage = summaryPage.goToAuthenticationPage()
+
+        addressPageSummary = authenticationPage.signInCheckOut("diego.rugerio@mail.com","XXXX#")
+
+        shippingPage = addressPageSummary.goToShippingPage()
+
+        shippingPage.getTermsCheckBox().click()
+
+        paymentPage = shippingPage.goToPaymentPage()
+
+        paymentPage.getCheckPaymentButton().click()
+
+        orderConfirmationPage = paymentPage.goToOrderConfirmationPage()
+
+        message = orderConfirmationPage.getMessageText()
+
+        assert "Your order on My Store is complete." in message
+
+
+
 
 
