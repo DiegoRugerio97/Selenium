@@ -18,6 +18,8 @@ class TestSearch(BaseClass):
         return request.param
 
     def test_searchShirt(self, getData_test_A):
+
+        logger = self.get_logger()
         
         homePage = HomePage(self.driver)
 
@@ -29,11 +31,15 @@ class TestSearch(BaseClass):
 
         productText = productPage.getProductName()
         
-        assert getData_test_A['item'] in productText
+        assert getData_test_A['item'] in productText, logger.error("APP DID NOT SEARCH FOR CORRECT ITEM")
+
+        logger.info("Test completed succesfully")
 
         productPage.goToHomePage()
 
     def test_invalidSearch(self, getData_test_B):
+
+        logger = self.get_logger()
 
         homePage = HomePage(self.driver)
 
@@ -45,9 +51,13 @@ class TestSearch(BaseClass):
 
         assert "No results" in alertMessage
 
+        logger.info("Test completed succesfully"), logger.error("APP DID NOT DISPLAY ERROR MESSAGE")
+
         searchResults.goToHomePage()
 
     def test_sortedSearch(self, getData_test_C):
+
+        logger = self.get_logger()
 
         homePage = HomePage(self.driver)
 
@@ -71,6 +81,9 @@ class TestSearch(BaseClass):
         for name in productNames:
             namesSortedList.append(name.text)
 
-        assert sorted(namesSortedList) == namesSortedList
+        assert sorted(namesSortedList) == namesSortedList, logger.error("APP DID NOT SORT PRODUCTS CORRECTLY")
+
+        logger.info("Test completed succesfully")
+
 
 

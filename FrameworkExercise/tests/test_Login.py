@@ -1,7 +1,6 @@
 from TestData.LoginData import LoginData
 import pytest
 from PageObjects.HomePage import HomePage
-from PageObjects.AuthenticationPage import AuthenticationPage
 from Utilities.BaseClass import BaseClass
 
 
@@ -23,6 +22,8 @@ class TestLogin(BaseClass):
 
     def test_invalidLoginMail(self, getData_test_A):
 
+        logger = self.get_logger()
+
         homePage = HomePage(self.driver)
 
         authenticationPage = homePage.goToAuthenticationPage()
@@ -35,11 +36,15 @@ class TestLogin(BaseClass):
 
         alertMessage = authenticationPage.getAlertMessage().text
         
-        assert "Invalid email" in alertMessage
+        assert "Invalid email" in alertMessage, logger.error("APP DID NOT DISPLAY ERROR MESSAGE")
+
+        logger.info("Test completed succesfully")
         
         authenticationPage.goToHomePage()
 
     def test_invalidLoginPasswd(self, getData_test_B):
+
+        logger = self.get_logger()
 
         homePage = HomePage(self.driver)
 
@@ -53,12 +58,16 @@ class TestLogin(BaseClass):
 
         alertMessage = authenticationPage.getAlertMessage().text
         
-        assert "Authentication failed" in alertMessage
+        assert "Authentication failed" in alertMessage, logger.error("APP DID NOT DISPLAY ERROR MESSAGE")
+
+        logger.info("Test completed succesfully")
 
         authenticationPage.goToHomePage()
 
 
     def test_validLogin(self, getData_test_C):
+
+        logger = self.get_logger()
 
         homePage = HomePage(self.driver)
 
@@ -72,7 +81,10 @@ class TestLogin(BaseClass):
 
         accountName = accountPage.getAccountLabel()
         
-        assert accountName == "Diego Rugerio"
+        assert accountName == "Diego Rugerio", logger.error("APP DID NOT LOG IN CORRECT USER")
+
+        logger.info("Test completed succesfully")
+
 
 
 

@@ -12,6 +12,8 @@ class TestContact(BaseClass):
 
     def test_ContactMessage(self,getData_test_A):
 
+        logger = self.get_logger()
+
         homePage = HomePage(self.driver)
 
         contactPage = homePage.goToContactPage()
@@ -29,5 +31,8 @@ class TestContact(BaseClass):
         message = contactPage.getMessageText()
 
         assert "successfully" in message
+
+        logger.info("Test completed succesfully")
+
 
     

@@ -15,7 +15,7 @@ class BaseClass():
 
     def verifyLinkPresence(self, linkText):
         #Wait for auto suggestion to show desired link
-        wait = WebDriverWait(self.driver,6)
+        wait = WebDriverWait(self.driver,10)
         #Wait until the link with the desired text is present
         wait.until(EC.presence_of_element_located((By.LINK_TEXT, linkText)))
 
