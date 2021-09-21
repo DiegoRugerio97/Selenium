@@ -34,3 +34,20 @@ class ContactPage(BasePage):
 
     def getMessageText(self):
         return self.driver.find_element(*ContactPage.messageText).text
+
+    def inputEmail(self,email):
+        self.getEmailInput().send_keys(email)
+
+    def inputOrderReference(self,order):
+        self.getOrderReferenceInput().send_keys(order)
+
+    def inputMessage(self,message):
+        self.getMessageArea().send_keys(message)
+
+    def submitContactMessage(self,email,order,message):
+        self.inputEmail(email)
+        self.inputOrderReference(order)
+        self.inputMessage(message)
+        self.getSubmitMessageButton().click()
+
+    

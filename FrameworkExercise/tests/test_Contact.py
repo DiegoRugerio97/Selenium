@@ -12,25 +12,21 @@ class TestContact(BaseClass):
 
     def test_ContactMessage(self,getData_test_A):
 
-        logger = self.get_logger()
+        logger = self.getLogger()
 
         homePage = HomePage(self.driver)
 
         contactPage = homePage.goToContactPage()
 
+        self.verifyElementPresence(contactPage.headingDropDown)
+
         self.selectFromDropDown(contactPage.getHeadingDropDown(),getData_test_A['heading'])
 
-        contactPage.getEmailInput().send_keys(getData_test_A['mail'])
-
-        contactPage.getOrderReferenceInput().send_keys(getData_test_A['order'])
-
-        contactPage.getMessageArea().send_keys(getData_test_A['message'])
-
-        contactPage.getSubmitMessageButton().click()
+        contactPage.submitContactMessage(getData_test_A['mail'],getData_test_A['order'],getData_test_A['message'])
 
         message = contactPage.getMessageText()
 
-        assert "successfully" in message
+        assert "successfully" in message, logger.error("CONTACT MESSAGE SUBMISSION FAILED")
 
         logger.info("Test completed succesfully")
 

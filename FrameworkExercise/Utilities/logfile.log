@@ -27,3 +27,5 @@
 2021-09-21 16:07:24,608 : INFO : test_EndToEnd : Moving to Payment Page
 2021-09-21 16:07:43,028 : INFO : test_EndToEnd : Moving to order confirmation Page
 2021-09-21 16:07:43,066 : INFO : test_EndToEnd : Test completed succesfully
+2021-09-21 16:14:55,691 : INFO : test_ContactMessage : Test completed succesfully
+2021-09-21 16:18:38,843 : INFO : test_ContactMessage : Test completed succesfully
