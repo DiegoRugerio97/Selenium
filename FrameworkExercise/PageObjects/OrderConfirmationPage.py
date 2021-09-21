@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
+from PageObjects.BasePage import BasePage
 
-class OrderConfirmationPage():
+class OrderConfirmationPage(BasePage):
 
     def __init__(self,driver):
         self.driver = driver

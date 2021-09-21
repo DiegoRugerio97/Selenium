@@ -1,8 +1,9 @@
 from PageObjects.CheckOutShippingPage import CheckOutShippingPage
+from PageObjects.BasePage import BasePage
 from PageObjects.AddressPage import AddressPage
 from selenium.webdriver.common.by import By
 
-class CheckOutAddressPage():
+class CheckOutAddressPage(BasePage):
 
     def __init__(self,driver):
         self.driver = driver

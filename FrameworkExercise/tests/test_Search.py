@@ -17,7 +17,7 @@ class TestSearch(BaseClass):
         
         assert "shirt" in productText
 
-        homePage.goToHomePage()
+        productPage.goToHomePage()
 
     def test_invalidSearch(self):
 
@@ -31,7 +31,7 @@ class TestSearch(BaseClass):
 
         assert "No results" in alertMessage
 
-        homePage.goToHomePage()
+        searchResults.goToHomePage()
 
     def test_sortedSearch(self):
 
@@ -59,10 +59,4 @@ class TestSearch(BaseClass):
 
         assert sorted(namesSortedList) == namesSortedList
 
-
-
-
-
-
-    
 

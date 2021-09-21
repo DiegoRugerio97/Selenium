@@ -1,8 +1,9 @@
 from PageObjects.CheckOutAddressPage import CheckOutAddressPage
+from PageObjects.BasePage import BasePage
 from PageObjects.AccountPage import AccountPage
 from selenium.webdriver.common.by import By
 
-class AuthenticationPage:
+class AuthenticationPage(BasePage):
 
     def __init__(self,driver):
         self.driver = driver

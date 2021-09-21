@@ -1,7 +1,8 @@
 from selenium.webdriver.common.by import By
+from PageObjects.BasePage import BasePage
 from PageObjects.AuthenticationPage import AuthenticationPage
 
-class CheckOutSummaryPage():
+class CheckOutSummaryPage(BasePage):
 
     def __init__(self,driver):
         self.driver = driver

@@ -36,9 +36,9 @@ class TestCheckOut(BaseClass):
 
         assert newCity in addressText
 
-        homePage.signOut()
+        addressPageSummary.signOut()
 
-        homePage.goToHomePage()
+        addressPageSummary.goToHomePage()
     
     def test_EndToEnd(self):
 

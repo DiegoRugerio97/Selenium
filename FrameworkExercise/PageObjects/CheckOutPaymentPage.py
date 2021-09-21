@@ -1,7 +1,8 @@
 from PageObjects.OrderConfirmationPage import OrderConfirmationPage
+from PageObjects.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
-class CheckOutPaymentPage:
+class CheckOutPaymentPage(BasePage):
 
     def __init__(self,driver):
         self.driver = driver

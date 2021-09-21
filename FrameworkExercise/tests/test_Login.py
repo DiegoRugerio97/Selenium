@@ -22,7 +22,7 @@ class TestLogin(BaseClass):
         
         assert "Invalid email" in alertMessage
         
-        homePage.goToHomePage()
+        authenticationPage.goToHomePage()
 
     def test_invalidLoginPasswd(self):
 
@@ -40,7 +40,7 @@ class TestLogin(BaseClass):
         
         assert "Authentication failed" in alertMessage
 
-        homePage.goToHomePage()
+        authenticationPage.goToHomePage()
 
 
     def test_validLogin(self):
@@ -56,6 +56,7 @@ class TestLogin(BaseClass):
         accountPage = authenticationPage.goToAccountPage()
 
         accountName = accountPage.getAccountLabel()
+        
         assert accountName == "Diego Rugerio"
 
 
