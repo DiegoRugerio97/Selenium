@@ -1,12 +1,24 @@
+import pytest
+from TestData.CheckOutData import CheckOutData
 from Utilities.BaseClass import BaseClass
 from PageObjects.HomePage import HomePage
 
 class TestCheckOut(BaseClass):
 
-    def test_updateAddress(self):
+    @pytest.fixture(params = CheckOutData.test_CheckOut_data_A)
+    def getData_test_A(self,request):
+        return request.param
+
+    @pytest.fixture(params = CheckOutData.test_CheckOut_data_B)
+    def getData_test_B(self,request):
+        return request.param
+
+
+    def test_updateAddress(self,getData_test_A):
+
         homePage = HomePage(self.driver)
 
-        homePage.getSearchField().send_keys("blouse")
+        homePage.getSearchField().send_keys(getData_test_A['item'])
 
         self.verifyElementPresenceByClass("ac_even")
 
@@ -20,13 +32,13 @@ class TestCheckOut(BaseClass):
         
         authenticationPage = summaryPage.goToAuthenticationPage()
 
-        addressPageSummary = authenticationPage.signInCheckOut("diego.rugerio@mail.com","XXXX#")
+        addressPageSummary = authenticationPage.signInCheckOut(getData_test_A['mail'],getData_test_A['password'])
 
         updateAddressPage = addressPageSummary.goUpdateAddressPage()
 
         updateAddressPage.getCityInput().clear()
 
-        newCity = "CityChangeTest4"
+        newCity = getData_test_A['city']
 
         updateAddressPage.getCityInput().send_keys(newCity)
 
@@ -40,11 +52,11 @@ class TestCheckOut(BaseClass):
 
         addressPageSummary.goToHomePage()
     
-    def test_EndToEnd(self):
+    def test_EndToEnd(self,getData_test_B):
 
         homePage = HomePage(self.driver)
 
-        homePage.getSearchField().send_keys("blouse")
+        homePage.getSearchField().send_keys(getData_test_B['item'])
 
         self.verifyElementPresenceByClass("ac_even")
 
@@ -58,7 +70,7 @@ class TestCheckOut(BaseClass):
         
         authenticationPage = summaryPage.goToAuthenticationPage()
 
-        addressPageSummary = authenticationPage.signInCheckOut("diego.rugerio@mail.com","XXXX#")
+        addressPageSummary = authenticationPage.signInCheckOut(getData_test_B['mail'],getData_test_B['password'])
 
         shippingPage = addressPageSummary.goToShippingPage()
 

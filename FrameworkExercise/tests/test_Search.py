@@ -1,13 +1,27 @@
+from TestData.SearchData import SearchData
+import pytest
 from PageObjects.HomePage import HomePage
 from Utilities.BaseClass import BaseClass
 
 class TestSearch(BaseClass):
 
-    def test_searchShirt(self):
+    @pytest.fixture(params = SearchData.test_Search_data_A)
+    def getData_test_A(self,request):
+        return request.param
+
+    @pytest.fixture(params = SearchData.test_Search_data_B)
+    def getData_test_B(self,request):
+        return request.param
+
+    @pytest.fixture(params = SearchData.test_Search_data_C)
+    def getData_test_C(self,request):
+        return request.param
+
+    def test_searchShirt(self, getData_test_A):
         
         homePage = HomePage(self.driver)
 
-        homePage.getSearchField().send_keys("shirt")
+        homePage.getSearchField().send_keys(getData_test_A['item'])
 
         self.verifyElementPresenceByClass("ac_even")
 
@@ -15,15 +29,15 @@ class TestSearch(BaseClass):
 
         productText = productPage.getProductName()
         
-        assert "shirt" in productText
+        assert getData_test_A['item'] in productText
 
         productPage.goToHomePage()
 
-    def test_invalidSearch(self):
+    def test_invalidSearch(self, getData_test_B):
 
         homePage = HomePage(self.driver)
 
-        homePage.getSearchField().send_keys("XXXX")
+        homePage.getSearchField().send_keys( getData_test_B['item'])
 
         searchResults = homePage.goToSearchResults()
 
@@ -33,11 +47,11 @@ class TestSearch(BaseClass):
 
         searchResults.goToHomePage()
 
-    def test_sortedSearch(self):
+    def test_sortedSearch(self, getData_test_C):
 
         homePage = HomePage(self.driver)
 
-        homePage.getSearchField().send_keys("dress")
+        homePage.getSearchField().send_keys( getData_test_C['item'])
 
         searchResults = homePage.goToSearchResults()
 
