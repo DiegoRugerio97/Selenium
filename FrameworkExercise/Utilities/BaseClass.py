@@ -23,6 +23,14 @@ class BaseClass():
         wait = WebDriverWait(self.driver,10)
         wait.until(EC.presence_of_element_located((By.CLASS_NAME,className)))
 
+    def verifyElementPresenceByXPATH(self,xpath):
+        wait = WebDriverWait(self.driver,10)
+        wait.until(EC.presence_of_element_located((By.XPATH,xpath)))
+
+    def verifyElementClickableByXPATH(self,xpath):
+        wait = WebDriverWait(self.driver,10)
+        wait.until(EC.element_to_be_clickable((By.XPATH,xpath)))
+
     def selectFromDropDown(self,webElement,text):
         selector = Select(webElement)
         selector.select_by_visible_text(text)

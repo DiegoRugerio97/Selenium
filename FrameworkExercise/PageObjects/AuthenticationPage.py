@@ -1,3 +1,4 @@
+from PageObjects.CheckOutAddressPage import CheckOutAddressPage
 from PageObjects.AccountPage import AccountPage
 from selenium.webdriver.common.by import By
 
@@ -38,3 +39,12 @@ class AuthenticationPage:
     def goToAccountPage(self):
         self.driver.find_element(*AuthenticationPage.submitButton).click()
         return AccountPage(self.driver)
+
+    def signInCheckOut(self,mail,password):
+        self.driver.find_element(*AuthenticationPage.mailField).send_keys(mail)
+        self.driver.find_element(*AuthenticationPage.passWordField).send_keys(password)
+        self.driver.find_element(*AuthenticationPage.submitButton).click()
+        return CheckOutAddressPage(self.driver)
+
+        
+

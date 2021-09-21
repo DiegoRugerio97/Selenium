@@ -14,6 +14,7 @@ class HomePage(BasePage):
     autoComplete = (By.CLASS_NAME, "ac_even")
     searchButton = (By.NAME, "submit_search")
     signInButton = (By.LINK_TEXT, "Sign in")
+    signOutButton = (By.LINK_TEXT, "Sign out")
 
     #Methods
     def getSearchField(self): 
@@ -31,7 +32,8 @@ class HomePage(BasePage):
         self.driver.find_element(*HomePage.signInButton).click()
         return AuthenticationPage(self.driver)
 
-
+    def signOut(self):
+        self.driver.find_element(*HomePage.signOutButton).click()
     
 
         
