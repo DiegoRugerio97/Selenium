@@ -17,7 +17,7 @@ class TestSearch(BaseClass):
     def getData_test_C(self,request):
         return request.param
 
-    def test_searchShirt(self, getData_test_A):
+    def test_searchItem(self, getData_test_A):
 
         logger = self.get_logger()
         
