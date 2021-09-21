@@ -22,19 +22,15 @@ class TestLogin(BaseClass):
 
     def test_invalidLoginMail(self, getData_test_A):
 
-        logger = self.get_logger()
+        logger = self.getLogger()
 
         homePage = HomePage(self.driver)
 
         authenticationPage = homePage.goToAuthenticationPage()
 
-        authenticationPage.getMailField().send_keys(getData_test_A['mail'])
+        authenticationPage.signIn(getData_test_A['mail'], getData_test_A['password'])
 
-        authenticationPage.getPassWordField().send_keys(getData_test_A['password'])
-
-        authenticationPage.getSubmitButton().click()
-
-        alertMessage = authenticationPage.getAlertMessage().text
+        alertMessage = authenticationPage.getAlertMessage()
         
         assert "Invalid email" in alertMessage, logger.error("APP DID NOT DISPLAY ERROR MESSAGE")
 
@@ -44,19 +40,15 @@ class TestLogin(BaseClass):
 
     def test_invalidLoginPasswd(self, getData_test_B):
 
-        logger = self.get_logger()
+        logger = self.getLogger()
 
         homePage = HomePage(self.driver)
 
         authenticationPage = homePage.goToAuthenticationPage()
 
-        authenticationPage.getMailField().send_keys(getData_test_B['mail'])
+        authenticationPage.signIn(getData_test_B['mail'], getData_test_B['password'])
 
-        authenticationPage.getPassWordField().send_keys(getData_test_B['password'])
-
-        authenticationPage.getSubmitButton().click()
-
-        alertMessage = authenticationPage.getAlertMessage().text
+        alertMessage = authenticationPage.getAlertMessage()
         
         assert "Authentication failed" in alertMessage, logger.error("APP DID NOT DISPLAY ERROR MESSAGE")
 
@@ -67,17 +59,13 @@ class TestLogin(BaseClass):
 
     def test_validLogin(self, getData_test_C):
 
-        logger = self.get_logger()
+        logger = self.getLogger()
 
         homePage = HomePage(self.driver)
 
         authenticationPage = homePage.goToAuthenticationPage()
 
-        authenticationPage.getMailField().send_keys( getData_test_C['mail'])
-
-        authenticationPage.getPassWordField().send_keys( getData_test_C['password'])
-
-        accountPage = authenticationPage.goToAccountPage()
+        accountPage = authenticationPage.signIn(getData_test_C['mail'], getData_test_C['password'])
 
         accountName = accountPage.getAccountLabel()
         

@@ -29,3 +29,9 @@
 2021-09-21 16:07:43,066 : INFO : test_EndToEnd : Test completed succesfully
 2021-09-21 16:14:55,691 : INFO : test_ContactMessage : Test completed succesfully
 2021-09-21 16:18:38,843 : INFO : test_ContactMessage : Test completed succesfully
+2021-09-21 16:22:21,364 : INFO : test_invalidLoginMail : Test completed succesfully
+2021-09-21 16:25:40,044 : INFO : test_invalidLoginMail : Test completed succesfully
+2021-09-21 16:26:03,989 : INFO : test_invalidLoginPasswd : Test completed succesfully
+2021-09-21 16:29:20,136 : INFO : test_invalidLoginMail : Test completed succesfully
+2021-09-21 16:29:44,780 : INFO : test_invalidLoginPasswd : Test completed succesfully
+2021-09-21 16:30:11,938 : INFO : test_validLogin : Test completed succesfully

@@ -9,6 +9,9 @@ class BasePage():
 
     indexLink = (By.XPATH, "//img[@alt='My Store']")
     signOutButton = (By.LINK_TEXT, "Sign out")
+    accountButton = (By.XPATH,"//a[@class='account']")
+
+   
 
 
     #Methods
@@ -18,4 +21,7 @@ class BasePage():
 
     def signOut(self):
         self.driver.find_element(*BasePage.signOutButton).click()
+
+    def getAccountLabel(self):
+        return self.driver.find_element(*BasePage.accountButton).text
 

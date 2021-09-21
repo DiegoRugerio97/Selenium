@@ -32,7 +32,7 @@ class AuthenticationPage(BasePage):
         return self.driver.find_element(*AuthenticationPage.submitButton)
 
     def getAlertMessage(self):
-        return self.driver.find_element(*AuthenticationPage.alertMessage)
+        return self.driver.find_element(*AuthenticationPage.alertMessage).text
 
     def getAccountButton(self):
         return self.driver.find_element(*AuthenticationPage.accountButton)
