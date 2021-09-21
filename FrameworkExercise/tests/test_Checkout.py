@@ -20,17 +20,17 @@ class TestCheckOut(BaseClass):
 
         homePage = HomePage(self.driver)
 
-        homePage.getSearchField().send_keys(getData_test_A['item'])
+        homePage.searchItem(getData_test_A['item'])
 
-        self.verifyElementPresenceByClass("ac_even")
+        self.verifyElementPresence(homePage.autoComplete)
 
         logger.info("Moving to Product Page")
 
         productPage = homePage.goToProductPage()
 
-        productPage.getAddToCartButton().click()
+        productPage.clickAddToCartButton()
 
-        self.verifyElementClickableByXPATH("//a[@title='Proceed to checkout']")
+        self.verifyElementClickable(productPage.checkOutButton)
 
         summaryPage = productPage.goToCheckOut()
 
@@ -40,7 +40,7 @@ class TestCheckOut(BaseClass):
 
         logger.info("Signing in")
 
-        addressPageSummary = authenticationPage.signInCheckOut(getData_test_A['mail'],getData_test_A['password'])
+        addressPageSummary = authenticationPage.signIn(getData_test_A['mail'],getData_test_A['password'])
 
         logger.info("In Address Summary page.")
 
@@ -48,15 +48,11 @@ class TestCheckOut(BaseClass):
 
         logger.info("Updating address.")
 
-        updateAddressPage.getCityInput().clear()
-
         newCity = getData_test_A['city']
 
-        updateAddressPage.getCityInput().send_keys(newCity)
+        updateAddressPage.inputNewAddress(newCity,updateAddressPage.getCityInput())
 
         logger.info("Updated city to {}".format(newCity))
-
-        updateAddressPage.getSubmitButton().click()
 
         addressText = addressPageSummary.getAddressText()
 
@@ -74,17 +70,17 @@ class TestCheckOut(BaseClass):
 
         homePage = HomePage(self.driver)
 
-        homePage.getSearchField().send_keys(getData_test_B['item'])
+        homePage.searchItem(getData_test_B['item'])
 
-        self.verifyElementPresenceByClass("ac_even")
+        self.verifyElementPresence(homePage.autoComplete)
 
         productPage = homePage.goToProductPage()
 
         logger.info("Moving to Product Page")
 
-        productPage.getAddToCartButton().click()
+        productPage.clickAddToCartButton()
 
-        self.verifyElementClickableByXPATH("//a[@title='Proceed to checkout']")
+        self.verifyElementClickable(productPage.checkOutButton)
 
         summaryPage = productPage.goToCheckOut()
 
@@ -94,23 +90,25 @@ class TestCheckOut(BaseClass):
 
         logger.info("Signing in")
 
-        addressPageSummary = authenticationPage.signInCheckOut(getData_test_B['mail'],getData_test_B['password'])
+        addressPageSummary = authenticationPage.signIn(getData_test_B['mail'],getData_test_B['password'])
 
         shippingPage = addressPageSummary.goToShippingPage()
 
         logger.info("Moving to Shipping Page")
 
-        shippingPage.getTermsCheckBox().click()
+        shippingPage.checkTermsCheckBox()
 
         paymentPage = shippingPage.goToPaymentPage()
 
         logger.info("Moving to Payment Page")
 
-        paymentPage.getCheckPaymentButton().click()
+        paymentPage.clickCheckPayment()
 
         orderConfirmationPage = paymentPage.goToOrderConfirmationPage()
 
         logger.info("Moving to order confirmation Page")
+
+        self.verifyElementPresence(orderConfirmationPage.message)
 
         message = orderConfirmationPage.getMessageText()
 

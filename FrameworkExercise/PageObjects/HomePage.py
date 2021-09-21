@@ -40,6 +40,10 @@ class HomePage(BasePage):
     def goToContactPage(self):
         self.driver.find_element(*HomePage.contactButton).click()
         return ContactPage(self.driver)
+
+    def searchItem(self,item):
+        self.getSearchField().send_keys(item)
+
     
 
         

@@ -26,3 +26,6 @@ class ProductPage(BasePage):
     def goToCheckOut(self):
         self.driver.find_element(*ProductPage.checkOutButton).click()
         return CheckOutSummaryPage(self.driver)
+
+    def clickAddToCartButton(self):
+        self.getAddToCartButton().click()

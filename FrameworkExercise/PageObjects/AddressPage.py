@@ -54,5 +54,9 @@ class AddressPage(BasePage):
 
     def getSubmitButton(self):
         return self.driver.find_element(*AddressPage.submitButton)
-        
+
+    def inputNewAddress(self,address,webElement):
+        webElement.clear()
+        webElement.send_keys(address)
+        self.getSubmitButton().click()
 

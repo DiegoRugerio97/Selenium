@@ -13,6 +13,14 @@ class BaseClass():
     def moveToElement(self,webElement):
         ActionChains(self.driver).move_to_element(webElement)
 
+    def verifyElementPresence(self,byTuple):
+        wait = WebDriverWait(self.driver,10)
+        wait.until(EC.presence_of_element_located(byTuple))
+
+    def verifyElementClickable(self,byTuple):
+        wait = WebDriverWait(self.driver,10)
+        wait.until(EC.element_to_be_clickable(byTuple))
+
     def verifyLinkPresence(self, linkText):
         #Wait for auto suggestion to show desired link
         wait = WebDriverWait(self.driver,10)

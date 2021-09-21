@@ -41,7 +41,7 @@ class AuthenticationPage(BasePage):
         self.driver.find_element(*AuthenticationPage.submitButton).click()
         return AccountPage(self.driver)
 
-    def signInCheckOut(self,mail,password):
+    def signIn(self,mail,password):
         self.driver.find_element(*AuthenticationPage.mailField).send_keys(mail)
         self.driver.find_element(*AuthenticationPage.passWordField).send_keys(password)
         self.driver.find_element(*AuthenticationPage.submitButton).click()

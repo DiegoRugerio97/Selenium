@@ -20,4 +20,6 @@ class CheckOutShippingPage(BasePage):
         self.driver.find_element(*CheckOutShippingPage.checkOutButton).click()
         return CheckOutPaymentPage(self.driver)
 
+    def checkTermsCheckBox(self):
+        self.getTermsCheckBox().click()
 

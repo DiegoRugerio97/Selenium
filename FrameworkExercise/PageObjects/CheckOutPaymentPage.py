@@ -24,3 +24,6 @@ class CheckOutPaymentPage(BasePage):
     def goToOrderConfirmationPage(self):
         self.driver.find_element(*CheckOutPaymentPage.confirmOrderButton).click()
         return OrderConfirmationPage(self.driver)
+
+    def clickCheckPayment(self):
+        self.getCheckPaymentButton().click()
