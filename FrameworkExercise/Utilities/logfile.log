@@ -1,37 +1,4 @@
-2021-09-21 15:56:59,521 : INFO : test_updateAddress : Moving to Product Page
-2021-09-21 15:57:21,630 : INFO : test_EndToEnd : Moving to Product Page
-2021-09-21 15:59:22,399 : INFO : test_updateAddress : Moving to Product Page
-2021-09-21 15:59:42,861 : INFO : test_updateAddress : Moving to CheckOut Page
-2021-09-21 15:59:53,121 : INFO : test_updateAddress : Signing in
-2021-09-21 16:00:03,712 : INFO : test_updateAddress : In Address Summary page.
-2021-09-21 16:00:09,982 : INFO : test_updateAddress : Updating address.
-2021-09-21 16:00:21,510 : INFO : test_updateAddress : Updated city to ChangeCityTest
-2021-09-21 16:00:21,538 : INFO : test_updateAddress : Test completed succesfully
-2021-09-21 16:00:56,278 : INFO : test_EndToEnd : Moving to Product Page
-2021-09-21 16:01:08,101 : INFO : test_EndToEnd : Moving to CheckOut Page
-2021-09-21 16:01:19,975 : INFO : test_EndToEnd : Signing in
-2021-09-21 16:01:39,901 : INFO : test_EndToEnd : Moving to Shipping Page
-2021-09-21 16:01:48,487 : INFO : test_EndToEnd : Moving to Payment Page
-2021-09-21 16:01:56,181 : INFO : test_EndToEnd : Moving to order confirmation Page
-2021-09-21 16:04:48,413 : INFO : test_updateAddress : Moving to Product Page
-2021-09-21 16:05:09,113 : INFO : test_updateAddress : Moving to CheckOut Page
-2021-09-21 16:05:21,415 : INFO : test_updateAddress : Signing in
-2021-09-21 16:05:31,580 : INFO : test_updateAddress : In Address Summary page.
-2021-09-21 16:05:38,411 : INFO : test_updateAddress : Updating address.
-2021-09-21 16:05:51,205 : INFO : test_updateAddress : Updated city to ChangeCityTest
-2021-09-21 16:05:51,234 : INFO : test_updateAddress : Test completed succesfully
-2021-09-21 16:06:30,865 : INFO : test_EndToEnd : Moving to Product Page
-2021-09-21 16:06:43,797 : INFO : test_EndToEnd : Moving to CheckOut Page
-2021-09-21 16:06:57,809 : INFO : test_EndToEnd : Signing in
-2021-09-21 16:07:16,458 : INFO : test_EndToEnd : Moving to Shipping Page
-2021-09-21 16:07:24,608 : INFO : test_EndToEnd : Moving to Payment Page
-2021-09-21 16:07:43,028 : INFO : test_EndToEnd : Moving to order confirmation Page
-2021-09-21 16:07:43,066 : INFO : test_EndToEnd : Test completed succesfully
-2021-09-21 16:14:55,691 : INFO : test_ContactMessage : Test completed succesfully
-2021-09-21 16:18:38,843 : INFO : test_ContactMessage : Test completed succesfully
-2021-09-21 16:22:21,364 : INFO : test_invalidLoginMail : Test completed succesfully
-2021-09-21 16:25:40,044 : INFO : test_invalidLoginMail : Test completed succesfully
-2021-09-21 16:26:03,989 : INFO : test_invalidLoginPasswd : Test completed succesfully
-2021-09-21 16:29:20,136 : INFO : test_invalidLoginMail : Test completed succesfully
-2021-09-21 16:29:44,780 : INFO : test_invalidLoginPasswd : Test completed succesfully
-2021-09-21 16:30:11,938 : INFO : test_validLogin : Test completed succesfully
+2021-09-21 16:35:21,221 : INFO : test_searchItem : Test completed succesfully
+2021-09-21 16:35:35,198 : INFO : test_invalidSearch : Test completed succesfully
+2021-09-21 16:35:35,198 : ERROR : test_invalidSearch : APP DID NOT DISPLAY ERROR MESSAGE
+2021-09-21 16:35:56,535 : INFO : test_sortedSearch : Test completed succesfully

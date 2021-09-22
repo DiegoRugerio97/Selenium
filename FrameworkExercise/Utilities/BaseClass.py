@@ -21,24 +21,6 @@ class BaseClass():
         wait = WebDriverWait(self.driver,10)
         wait.until(EC.element_to_be_clickable(byTuple))
 
-    def verifyLinkPresence(self, linkText):
-        #Wait for auto suggestion to show desired link
-        wait = WebDriverWait(self.driver,10)
-        #Wait until the link with the desired text is present
-        wait.until(EC.presence_of_element_located((By.LINK_TEXT, linkText)))
-
-    def verifyElementPresenceByClass(self,className):
-        wait = WebDriverWait(self.driver,10)
-        wait.until(EC.presence_of_element_located((By.CLASS_NAME,className)))
-
-    def verifyElementPresenceByXPATH(self,xpath):
-        wait = WebDriverWait(self.driver,10)
-        wait.until(EC.presence_of_element_located((By.XPATH,xpath)))
-
-    def verifyElementClickableByXPATH(self,xpath):
-        wait = WebDriverWait(self.driver,10)
-        wait.until(EC.element_to_be_clickable((By.XPATH,xpath)))
-
     def selectFromDropDown(self,webElement,text):
         selector = Select(webElement)
         selector.select_by_visible_text(text)
