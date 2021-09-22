@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 from PageObjects.BasePage import BasePage
 
+#Contact Page
+#Used as a portal for the user to contact customer service or the IT team. 
+
 class ContactPage(BasePage):
 
     def __init__(self,driver):

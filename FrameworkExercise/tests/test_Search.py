@@ -3,8 +3,13 @@ import pytest
 from PageObjects.HomePage import HomePage
 from Utilities.BaseClass import BaseClass
 
+#Search Test case
+#Test the Search and Sort Functionality in the Store App.
+
+
 class TestSearch(BaseClass):
 
+    #Defining the data loader fixtures for each test scenario
     @pytest.fixture(params = SearchData.test_Search_data_A)
     def getData_test_A(self,request):
         return request.param
@@ -17,6 +22,7 @@ class TestSearch(BaseClass):
     def getData_test_C(self,request):
         return request.param
 
+    #Verify that searching for an specific item in the Search Bar returns the correct Product Page.
     def test_searchItem(self, getData_test_A):
 
         logger = self.getLogger()
@@ -37,6 +43,7 @@ class TestSearch(BaseClass):
 
         productPage.goToHomePage()
 
+    #Verify that entering an invalid item in the Search Bar, returns the Search Results page with an error message.
     def test_invalidSearch(self, getData_test_B):
 
         logger = self.getLogger()
@@ -55,6 +62,7 @@ class TestSearch(BaseClass):
 
         searchResults.goToHomePage()
 
+    #Verify that the sorting functionality is working correctly on the Store App.
     def test_sortedSearch(self, getData_test_C):
 
         logger = self.getLogger()

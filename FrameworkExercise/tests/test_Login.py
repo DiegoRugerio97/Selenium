@@ -3,10 +3,12 @@ import pytest
 from PageObjects.HomePage import HomePage
 from Utilities.BaseClass import BaseClass
 
-
+#Login test case
+#Test the Login Functionality in the Store App.
 
 class TestLogin(BaseClass):
 
+    #Defining the data loader fixtures for each test scenario
     @pytest.fixture(params = LoginData.test_Login_data_A)
     def getData_test_A(self,request):
         return request.param
@@ -19,7 +21,7 @@ class TestLogin(BaseClass):
     def getData_test_C(self,request):
         return request.param
 
-
+    #Verify that entering an invalid email on Sign In, the error message is displayed on app.
     def test_invalidLoginMail(self, getData_test_A):
 
         logger = self.getLogger()
@@ -38,6 +40,7 @@ class TestLogin(BaseClass):
         
         authenticationPage.goToHomePage()
 
+    #Verify that entering an invalid password on Sign In form, the error message is displayed on app.
     def test_invalidLoginPasswd(self, getData_test_B):
 
         logger = self.getLogger()
@@ -56,7 +59,7 @@ class TestLogin(BaseClass):
 
         authenticationPage.goToHomePage()
 
-
+    #Verify that entering an valid Email and Password on Sign In, the app loads up the correct username
     def test_validLogin(self, getData_test_C):
 
         logger = self.getLogger()

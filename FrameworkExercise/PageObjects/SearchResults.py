@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 from PageObjects.BasePage import BasePage
 
+#Search Results Page
+#This page show the results of an specific search query. 
+
 class SearchResults(BasePage):
 
     def __init__(self,driver):

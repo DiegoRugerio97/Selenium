@@ -3,6 +3,8 @@ from PageObjects.BasePage import BasePage
 from PageObjects.AddressPage import AddressPage
 from selenium.webdriver.common.by import By
 
+#Address Page that loads as a part of the checkout process.
+
 class CheckOutAddressPage(BasePage):
 
     def __init__(self,driver):

@@ -2,6 +2,9 @@ from PageObjects.CheckOutSummaryPage import CheckOutSummaryPage
 from PageObjects.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
+#Product Page
+#Individual page for an specific product. All of the products share the same structure, only data changes.
+
 class ProductPage(BasePage):
 
     def __init__(self,driver):

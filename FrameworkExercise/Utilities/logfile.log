@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 2021-09-21 16:35:21,221 : INFO : test_searchItem : Test completed succesfully
 2021-09-21 16:35:35,198 : INFO : test_invalidSearch : Test completed succesfully
 2021-09-21 16:35:35,198 : ERROR : test_invalidSearch : APP DID NOT DISPLAY ERROR MESSAGE
 2021-09-21 16:35:56,535 : INFO : test_sortedSearch : Test completed succesfully
->>>>>>> 68d09a7e5a556ce3f4c85915378390d3f0ade731

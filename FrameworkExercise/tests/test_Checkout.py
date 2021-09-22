@@ -3,8 +3,12 @@ from TestData.CheckOutData import CheckOutData
 from Utilities.BaseClass import BaseClass
 from PageObjects.HomePage import HomePage
 
+#Checkout Test case.
+#Test the CheckOut Functionality in the Store App.
+
 class TestCheckOut(BaseClass):
 
+    #Defining Data loader fixtures for each test scenario.
     @pytest.fixture(params = CheckOutData.test_CheckOut_data_A)
     def getData_test_A(self,request):
         return request.param
@@ -13,6 +17,7 @@ class TestCheckOut(BaseClass):
     def getData_test_B(self,request):
         return request.param
 
+    #Verify that updating the Shipping Address in CheckOut is reflected immediately by the App.
 
     def test_updateAddress(self,getData_test_A):
 
@@ -63,7 +68,8 @@ class TestCheckOut(BaseClass):
         addressPageSummary.signOut()
 
         addressPageSummary.goToHomePage()
-    
+
+    # Verify that the CheckOut functionality is working from Beginning to End.    
     def test_EndToEnd(self,getData_test_B):
 
         logger = self.getLogger()

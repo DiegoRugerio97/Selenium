@@ -5,6 +5,10 @@ from PageObjects.BasePage import BasePage
 from PageObjects.ProductPage import ProductPage
 from selenium.webdriver.common.by import By
 
+#Home Page
+#First page that will be loaded.
+#Used in all of the cases, therefore it has connection to most of the other Page Classes.
+
 class HomePage(BasePage):
 
     def __init__(self,driver):
@@ -14,14 +18,13 @@ class HomePage(BasePage):
     searchField = (By.ID, "search_query_top")
     autoComplete = (By.CLASS_NAME, "ac_even")
     searchButton = (By.NAME, "submit_search")
-    signInButton = (By.LINK_TEXT, "Sign in")
-    signOutButton = (By.LINK_TEXT, "Sign out")
     contactButton = (By.LINK_TEXT, "Contact us")
 
     #Methods
     def getSearchField(self): 
         return self.driver.find_element(*HomePage.searchField)
 
+    #Redirection Methods
     def goToProductPage(self):
         self.driver.find_element(*HomePage.autoComplete).click()
         return ProductPage(self.driver)
@@ -33,9 +36,6 @@ class HomePage(BasePage):
     def goToAuthenticationPage(self):
         self.driver.find_element(*HomePage.signInButton).click()
         return AuthenticationPage(self.driver)
-
-    def signOut(self):
-        self.driver.find_element(*HomePage.signOutButton).click()
 
     def goToContactPage(self):
         self.driver.find_element(*HomePage.contactButton).click()
