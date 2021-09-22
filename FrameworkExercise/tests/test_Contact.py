@@ -20,6 +20,8 @@ class TestContact(BaseClass):
 
         homePage = HomePage(self.driver)
 
+        self.verifyElementPresence(homePage.contactButton)
+
         contactPage = homePage.goToContactPage()
 
         self.verifyElementPresence(contactPage.headingDropDown)

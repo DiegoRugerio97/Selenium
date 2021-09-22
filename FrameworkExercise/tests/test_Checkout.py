@@ -25,9 +25,11 @@ class TestCheckOut(BaseClass):
 
         homePage = HomePage(self.driver)
 
+        self.verifyElementPresence(homePage.searchField)
+
         homePage.searchItem(getData_test_A['item'])
 
-        self.verifyElementPresence(homePage.autoComplete)
+        self.verifyElementClickable(homePage.autoComplete)
 
         logger.info("Moving to Product Page")
 
@@ -76,9 +78,11 @@ class TestCheckOut(BaseClass):
 
         homePage = HomePage(self.driver)
 
+        self.verifyElementPresence(homePage.searchField)
+
         homePage.searchItem(getData_test_B['item'])
 
-        self.verifyElementPresence(homePage.autoComplete)
+        self.verifyElementClickable(homePage.autoComplete)
 
         productPage = homePage.goToProductPage()
 

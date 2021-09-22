@@ -21,7 +21,6 @@ def browserSetup(request):
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--start-maximized")
         chrome_options.add_argument("--ignore-certificate-errors")
-        chrome_options.add_argument("--disable-gpu")
         driver = webdriver.Chrome(executable_path='C:\\Users\\Diego\\Downloads\\Programas a Instalar\\2021\\Drivers\\chromedriver_win32\\chromedriver.exe' , options=chrome_options)
     
     #SPECIFICATIONS FOR OTHER BROWSERS, OPTIONS AND DRIVERS
@@ -39,4 +38,5 @@ def browserSetup(request):
     #Use yield keyword to give control to the test case code, then when it ends, continue the fixture
     #code, in this case, closing the browser.
     yield
+    driver.delete_all_cookies()
     driver.close()
