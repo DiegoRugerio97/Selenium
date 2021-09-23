@@ -56,9 +56,9 @@ class TestSearch(BaseClass):
 
         alertMessage = searchResults.getAlertText()
 
-        assert "No results" in alertMessage
+        assert "No results" in alertMessage, logger.error("APP DID NOT DISPLAY ERROR MESSAGE")
 
-        logger.info("Test completed succesfully"), logger.error("APP DID NOT DISPLAY ERROR MESSAGE")
+        logger.info("Test completed succesfully")
 
         searchResults.goToHomePage()
 
