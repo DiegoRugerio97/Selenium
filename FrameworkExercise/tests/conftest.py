@@ -24,8 +24,8 @@ def browserSetup(request):
         driver = webdriver.Chrome(executable_path='C:\\Users\\Diego\\Downloads\\Programas a Instalar\\2021\\Drivers\\chromedriver_win32\\chromedriver.exe' , options=chrome_options)
     
     #SPECIFICATIONS FOR OTHER BROWSERS, OPTIONS AND DRIVERS
-    #elif browser == "firefox":
-        #driver = webdriver.Firefox(executable_path='<Path to geckodriver.exe>')
+    elif browser == "firefox":
+        driver = webdriver.Firefox(executable_path='<Path to geckodriver.exe>')
     
     driver.get("http://automationpractice.com/index.php")
 
