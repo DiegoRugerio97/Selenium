@@ -2,6 +2,9 @@ from PageObjects.OrderConfirmationPage import OrderConfirmationPage
 from PageObjects.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
+#Payment Page that loads as a part of the checkout process.
+#It shows order details and offers two payment options, wire transfer and check.
+
 class CheckOutPaymentPage(BasePage):
 
     def __init__(self,driver):

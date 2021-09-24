@@ -1,6 +1,10 @@
 from PageObjects.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
+#Address Page
+#This page is used to modify the address data of the account.
+#It contains several fields, all defined by its WebElement.
+
 class AddressPage(BasePage):
 
     def __init__(self,driver):
@@ -55,6 +59,8 @@ class AddressPage(BasePage):
     def getSubmitButton(self):
         return self.driver.find_element(*AddressPage.submitButton)
 
+    #Method for inputting a new Address in the specified Input field, in the test case its only used to 
+    #change one of the fields but its funcionality could be extended.
     def inputNewAddress(self,address,webElement):
         webElement.clear()
         webElement.send_keys(address)

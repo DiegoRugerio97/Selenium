@@ -1,4 +1,30 @@
-2021-09-21 16:35:21,221 : INFO : test_searchItem : Test completed succesfully
-2021-09-21 16:35:35,198 : INFO : test_invalidSearch : Test completed succesfully
-2021-09-21 16:35:35,198 : ERROR : test_invalidSearch : APP DID NOT DISPLAY ERROR MESSAGE
-2021-09-21 16:35:56,535 : INFO : test_sortedSearch : Test completed succesfully
+2021-09-22 19:41:44,247 : INFO : test_updateAddress : Moving to Product Page
+2021-09-22 19:41:49,128 : INFO : test_updateAddress : Moving to CheckOut Page
+2021-09-22 19:41:50,742 : INFO : test_updateAddress : Signing in
+2021-09-22 19:41:52,517 : INFO : test_updateAddress : In Address Summary page.
+2021-09-22 19:41:53,455 : INFO : test_updateAddress : Updating address.
+2021-09-22 19:41:55,035 : INFO : test_updateAddress : Updated city to ChangeCityTest
+2021-09-22 19:41:55,076 : INFO : test_updateAddress : Test completed succesfully
+2021-09-22 19:42:02,982 : INFO : test_EndToEnd : Moving to Product Page
+2021-09-22 19:42:05,267 : INFO : test_EndToEnd : Moving to CheckOut Page
+2021-09-22 19:42:07,229 : INFO : test_EndToEnd : Signing in
+2021-09-22 19:42:10,691 : INFO : test_EndToEnd : Moving to Shipping Page
+2021-09-22 19:42:11,943 : INFO : test_EndToEnd : Moving to Payment Page
+2021-09-22 19:42:15,499 : INFO : test_EndToEnd : Moving to order confirmation Page
+2021-09-22 19:42:15,544 : INFO : test_EndToEnd : Test completed succesfully
+2021-09-22 19:42:41,475 : INFO : test_invalidLoginMail : Test completed succesfully
+2021-09-22 19:42:46,211 : INFO : test_invalidLoginPasswd : Test completed succesfully
+2021-09-22 19:42:50,757 : INFO : test_validLogin : Test completed succesfully
+2021-09-22 19:43:55,438 : INFO : test_searchItem : Test completed succesfully
+2021-09-22 19:43:58,468 : INFO : test_invalidSearch : Test completed succesfully
+2021-09-22 19:43:58,468 : ERROR : test_invalidSearch : APP DID NOT DISPLAY ERROR MESSAGE
+2021-09-22 19:44:03,189 : INFO : test_sortedSearch : Test completed succesfully
+2021-09-23 13:10:48,101 : INFO : test_invalidLoginMail : Test completed succesfully
+2021-09-23 13:10:53,444 : INFO : test_invalidLoginPasswd : Test completed succesfully
+2021-09-23 13:10:58,708 : INFO : test_validLogin : Test completed succesfully
+2021-09-23 13:13:14,142 : INFO : test_invalidLoginMail : Test completed succesfully
+2021-09-23 13:13:20,198 : INFO : test_invalidLoginPasswd : Test completed succesfully
+2021-09-23 13:13:26,503 : INFO : test_validLogin : Test completed succesfully
+2021-09-23 13:14:23,346 : INFO : test_invalidLoginMail : Test completed succesfully
+2021-09-23 13:14:30,254 : INFO : test_invalidLoginPasswd : Test completed succesfully
+2021-09-23 13:14:38,311 : INFO : test_validLogin : Test completed succesfully

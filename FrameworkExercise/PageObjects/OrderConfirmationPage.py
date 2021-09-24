@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 from PageObjects.BasePage import BasePage
 
+#Order Confirmation Page
+#Final page in the checkout process.
+
 class OrderConfirmationPage(BasePage):
 
     def __init__(self,driver):

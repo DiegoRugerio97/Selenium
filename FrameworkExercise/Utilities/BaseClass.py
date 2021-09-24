@@ -7,11 +7,17 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import inspect
 
+# The BaseClass defines methods that will be shared through all of the test cases.
+# Methods related to ActionChains class, Explicit Waits using expected conditions,
+# dropdown selection through Select class and logging implementation are all defined in this base class.
+# This class also uses the browserSetup fixture defined in the tests/conftest.py file. Therefore, all of the 
+# classes that inherit from BaseClass will also use the same fixture.
+
 @pytest.mark.usefixtures("browserSetup")
 class BaseClass():
 
     def moveToElement(self,webElement):
-        ActionChains(self.driver).move_to_element(webElement)
+        ActionChains(self.driver).move_to_element(webElement).perform()
 
     def verifyElementPresence(self,byTuple):
         wait = WebDriverWait(self.driver,10)

@@ -2,6 +2,9 @@ from PageObjects.CheckOutPaymentPage import CheckOutPaymentPage
 from PageObjects.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
+#Shipping Page that loads as a part of the checkout process.
+#It shows shipping details and ask for the user to click on a checkbox, accepting Terms and Conditions.
+
 class CheckOutShippingPage(BasePage):
 
     def __init__(self,driver):
